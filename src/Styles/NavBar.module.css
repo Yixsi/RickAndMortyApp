@@ -1,0 +1,31 @@
+.nav{
+    grid-column: 1/4;
+    grid-row: 1/2;
+    background-color: #19182691;
+    padding: 0;
+    width: 100%;
+    box-shadow: 0.5em 0 0.8em #000;
+    z-index: 2; 
+}
+.navItems{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img{
+    left:0;
+    height:15%;
+    width: 15%;
+    margin-left: 8%;
+    
+}
+.navList{
+    display: flex;
+    margin-left: auto;
+    margin-right: 3%;
+    list-style: none;
+    font-size: 1.6rem;
+    font-family: 'Patrick Hand', cursive;
+}

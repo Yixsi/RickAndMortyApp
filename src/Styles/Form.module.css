@@ -1,0 +1,92 @@
+.login{
+    display: grid;
+    grid-template-columns: 10% 70% 10%;
+    grid-template-rows: 50% 10% auto;
+    align-items: center;
+}
+.loginBG{
+    position: absolute;
+    z-index: -1;
+    width: 80%;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+
+.container{
+
+    grid-column: 2/4;
+    grid-row: 2/4;
+    height: 80%;
+    width: 90%;
+    background-color: rgb(230, 133, 48);
+    padding: 8%;
+    
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    font-family: 'Inter', sans-serif;
+    
+}
+
+.label{
+    font-weight: bold;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.input{
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.09rem;
+    outline: none;
+    box-shadow: none;
+    padding: 8px;
+    border: none;
+    font-size: 20px;
+    background: none;
+    border-bottom: 4px solid #fff;
+    
+}
+
+input:-webkit-autofill {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset !important;
+    -webkit-text-fill-color: #333 !important;
+}
+
+input:-internal-autofill-selected {
+    background-color: transparent !important;
+}
+.buttonLogin{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    align-self: center;
+    margin-top: 20px;
+    background-color: #283026;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+.buttonLogin:hover{
+    cursor: pointer;
+    background-color: #096c77;
+}
+
+.homeImg{
+    width: 200px;
+    position: absolute;
+    top:0;
+    left: 30px;
+}
+.formSp{
+    margin-top: 0;
+    color:bisque;
+    font-size: small;
+}
