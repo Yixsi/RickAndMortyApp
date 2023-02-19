@@ -5,7 +5,18 @@
     padding: 0;
     width: 100%;
     box-shadow: 0.5em 0 0.8em #000;
-    z-index: 2; 
+
+    /* background-color: rgba(37, 37, 37, 255) */
+}
+.charNav{
+    grid-column: 1/4;
+    grid-row: 1/2;
+    background-color: #1c1c24;
+    padding: 0;
+    width: 100%;
+    box-shadow: 0.5em 0 0.8em #000;
+    z-index: 90;
+    position: fixed;
 }
 .navItems{
     display: flex;

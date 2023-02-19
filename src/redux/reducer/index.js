@@ -4,19 +4,20 @@ import {
   ADD_FAVORITE,
   DELETE_FAVORITE,
   GET_FAVORITES,
-} from "../actions";
+} from "../actions/types";
 
 const initialState = {
   characters: [],
   characterDetail: {},
-  favorites: [],
+  favorites: []
 };
 
-const createRoot = (state = initialState, { type, payload }) => {
+const rootReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case GET_CHARACTERS:
       return {
         ...state,
+        characters: payload
       };
     case ADD_FAVORITE:
       return {
@@ -40,3 +41,5 @@ const createRoot = (state = initialState, { type, payload }) => {
       };
   }
 };
+
+export default rootReducer;

@@ -1,29 +1,18 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {Link } from 'react-router-dom';
+import { useSelector, useDispatch } from "react-redux";
+import { getCharacterDetail } from "../redux/actions";
 import style from '../Styles/Detail.module.css'
 
 export default function Detail(){
-    const [character, setCharacter] = useState({});
-    const { detailId } = useParams();
+  const character = useSelector(state => state.characterDetail);
+  const { ID } = useParams();
+  const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
-          .then((response) => response.json())
-          .then((char) => {
-            if (char.name) {
-              setCharacter(char);
-            } else {
-              window.alert("No hay personajes con ese ID");
-            }
-          })
-          .catch((err) => {
-            window.alert("No hay personajes con ese ID");
-          });
-        return setCharacter({});
-      }, [detailId]);
+        dispatch(getCharacterDetail(ID))
+      });
 
-      console.log(character);
     return(
         <div className={style.modalContainer}>
           <div className={style.modalElements}>

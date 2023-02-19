@@ -5,9 +5,9 @@ import {
   ADD_FAVORITE,
   DELETE_FAVORITE,
   GET_FAVORITES,
-} from "../actions";
+} from "../actions/types";
 
-const getCharacters = () =>{
+export const getCharacters = () =>{
     return async (dispatch) =>{
         const response = await axios.get(
           "https://rickandmortyapi.com/api/character/"
@@ -19,7 +19,7 @@ const getCharacters = () =>{
     }
 }
 
-const getCharacterDetail = (id) => {
+export const getCharacterDetail = (id) => {
   return async (dispatch) => {
     const response = await axios.get(
       `https://rickandmortyapi.com/api/character/${id}`
@@ -31,14 +31,14 @@ const getCharacterDetail = (id) => {
   };
 };
 
-const addFavorite = (favorite) =>{
+export const addFavorite = (favorite) =>{
     return{
         type: ADD_FAVORITE,
         payload: favorite
     }
 }
 
-const deleteFavorite = (id) =>{
+export const deleteFavorite = (id) =>{
     return{
         type: DELETE_FAVORITE,
         payload: id

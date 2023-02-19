@@ -1,12 +1,27 @@
+import style from '../Styles/Cards.module.css'
 import Card from './Card';
 import SearchBar from './SearchBar';
-import style from '../Styles/Cards.module.css'
+import {useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react';
+import { getCharacters } from '../redux/actions/index'
 
-export default function Cards({characters, onClose, onSearch}) {
+export default function Cards({onClose, onSearch}) {
+
+   const { characters } = useSelector(state => state);
+
+   const dispatch = useDispatch();
+
+   useEffect(()=>{
+      dispatch(getCharacters())
+   });
+   
+
    return(
          <div className={style.container}>
-            <span className={style.spanInfo}>Write a number and add a character!</span>
-            <SearchBar className="search" onSearch={onSearch}/>
+            <div className={style.rowOne}>
+               <span className={style.spanInfo}>Write a number and add a character!</span>
+               <SearchBar className="search" onSearch={onSearch}/>
+            </div>
 
             <div className={style.cards}>
                {
@@ -26,19 +41,3 @@ export default function Cards({characters, onClose, onSearch}) {
       </div>
    );
 }
-
-// animation-name:ingresar ;
-//     animation-duration: 2s;
-//     animation-iteration-count: 1;
-//     animation-fill-mode: forwards;
-// @keyframes ingresar {
-//     0%{
-//         opacity:0;
-
-//     }
-//     100%{
-//         opacity:1;
-       
-//     }
-    
-// }

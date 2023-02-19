@@ -3,14 +3,15 @@ import style from '../Styles/Card.module.css'
 
 export default function Card(props) {
 
-   const clear = () =>{
-      props.onClose(props.id);
-   }
+
+//    const onClose = (id)=>{
+//     setCharacters(characters = characters.filter(el => el.id !== id));
+//   }
    return (
       
          <div className={style.card}>
             <div className={style.imgData}>
-               <button onClick={clear} className={style.button}>X</button>
+               <button className={style.button}>X</button>
                <img  src={props.image} alt="" className={style.imgCard}/>
                <Link to={`/detail/${props.id}`}>
                   <h2 className={style.h2}>{props.name}</h2>

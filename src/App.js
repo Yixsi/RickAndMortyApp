@@ -42,9 +42,7 @@ useEffect(() => {
       });
   }
 
-  const onClose = (id)=>{
-    setCharacters(characters = characters.filter(el => el.id !== id));
-  }
+  
 
   if(pathname !== '/login'){
     return(
@@ -52,9 +50,9 @@ useEffect(() => {
         <NavBar/>
         <Routes>
           <Route exact path={'/home'} element={<Home/>}></Route>
-          <Route path={'/characters'} element={<Cards characters={characters} onClose={onClose} onSearch={onSearch}/>}/>
+          <Route path={'/characters'} element={<Cards characters={characters} onSearch={onSearch}/>}/>
           <Route path={'/about'} element={<About/>}/>
-          <Route path={'/detail/:detailId'} element={<Detail />}/>
+          <Route path={'/detail/:ID'} element={<Detail />}/>
         </Routes>
       </div>
     )

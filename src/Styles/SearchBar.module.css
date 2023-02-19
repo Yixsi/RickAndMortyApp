@@ -2,9 +2,6 @@
     border: 2px solid #0fc8c8;
     border-radius: 15px;
     transition: all 0.5s ease-in-out;
-    position: absolute;
-    right: 8%;
-    margin-top: 2%;
 }
 .searchBar:hover{
     background-color: rgba(186, 120, 237, 0.232);
