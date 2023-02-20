@@ -4,6 +4,7 @@ import SearchBar from './SearchBar';
 import {useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react';
 import { getCharacters } from '../redux/actions/index'
+import { Link } from 'react-router-dom'
 
 export default function Cards({onClose, onSearch}) {
 
@@ -17,12 +18,12 @@ export default function Cards({onClose, onSearch}) {
    
 
    return(
-         <div className={style.container}>
+         <>
             <div className={style.rowOne}>
                <span className={style.spanInfo}>Write a number and add a character!</span>
-               <SearchBar className="search" onSearch={onSearch}/>
+               {/* <SearchBar className="search" onSearch={onSearch}/> */}
+               <Link to='/favorites'><span>See favorites</span></Link>
             </div>
-
             <div className={style.cards}>
                {
                   characters.map((el, key) => {
@@ -38,6 +39,6 @@ export default function Cards({onClose, onSearch}) {
                      })
                   }
             </div>
-      </div>
+      </>
    );
 }

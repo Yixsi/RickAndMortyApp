@@ -3,7 +3,7 @@ import {
   GET_CHARACTER_DETAIL,
   ADD_FAVORITE,
   DELETE_FAVORITE,
-  GET_FAVORITES,
+  GET_FAVORITES
 } from "../actions/types";
 
 const initialState = {
@@ -19,25 +19,30 @@ const rootReducer = (state = initialState, { type, payload }) => {
         ...state,
         characters: payload
       };
-    case ADD_FAVORITE:
-      return {
-        ...state,
-        favorites: [...state.favorites, payload],
-      };
     case GET_CHARACTER_DETAIL:
       return {
         ...state,
-        characterDetail: payload,
+        characterDetail: payload
+      };
+    case ADD_FAVORITE:
+      return {
+        ...state,
+        favorites: [...state.favorites, payload]
       };
     case DELETE_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.filter((el) => el.id !== payload.id),
+        favorites: state.favorites.filter((el) => el.id !== payload)
+      };
+    case GET_FAVORITES:
+      return {
+        ...state,
+        favorites: state.favorites
       };
 
     default:
       return {
-        ...state,
+        ...state
       };
   }
 };

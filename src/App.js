@@ -7,6 +7,7 @@ import Detail from './components/Detail.jsx'
 import Form from './components/Form.jsx'
 import Home from './components/Home'
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
+import Favorites from './components/Favorites'
 
 
 function App () {
@@ -53,6 +54,7 @@ useEffect(() => {
           <Route path={'/characters'} element={<Cards characters={characters} onSearch={onSearch}/>}/>
           <Route path={'/about'} element={<About/>}/>
           <Route path={'/detail/:ID'} element={<Detail />}/>
+          <Route path={'/favorites'} element={<Favorites/>}/>
         </Routes>
       </div>
     )

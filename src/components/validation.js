@@ -12,7 +12,7 @@ const validation = (user)=>{
         errors.username= 'Excediste el número de caracteres permitido.'; 
     }
     if (!regUser.test(user.username)) {
-        errors.username= 'El formato de ususario no es válido, ingrese un correo.';
+        errors.username= 'Formato no válido, ingrese un correo.';
     }
     if (!regPass.test(user.password)) {
         errors.password= 'Contraseña insegura.';

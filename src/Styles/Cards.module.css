@@ -1,19 +1,8 @@
-.container{
-    grid-column: 1/4;
-    grid-row: 3/4;
-    display: grid;
-    grid-template-rows: auto auto;
-    gap: 2%;
-    justify-content: space-around;
-}
-
 .rowOne{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    grid-column: 1/4;
+    grid-row: 2/3;
 
 }
-
 .spanInfo{
     font-size: 23px;
     font-family: 'Inter', sans-serif;
@@ -24,8 +13,12 @@
     color: #68d248;
 }
 .cards{
+    grid-row: 3/4;
+    grid-column: 1/4;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    
+    gap: 2rem;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    margin: 0 2%;
+
 }

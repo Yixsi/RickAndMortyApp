@@ -4,7 +4,7 @@ import {
   GET_CHARACTER_DETAIL,
   ADD_FAVORITE,
   DELETE_FAVORITE,
-  GET_FAVORITES,
+  GET_FAVORITES
 } from "../actions/types";
 
 export const getCharacters = () =>{
@@ -43,4 +43,10 @@ export const deleteFavorite = (id) =>{
         type: DELETE_FAVORITE,
         payload: id
     }
+}
+
+export const getFavorites = ()=>{
+  return{
+    type: GET_FAVORITES
+  }
 }
