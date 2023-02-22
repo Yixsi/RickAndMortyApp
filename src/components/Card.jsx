@@ -14,8 +14,10 @@ export default function Card(props) {
       for(let f of favorites){
          if (f.id === props.id) {
             setFavorite(true);
-      }};
-}, [favorites]);
+         }
+      }
+   }, [favorites, props.id]
+   );
 
    const handleFavorite = ()=>{
       if(isFavorite){
@@ -27,25 +29,21 @@ export default function Card(props) {
       }
    }
 
+   let favIcon = isFavorite ? "fa-solid fa-star" : "fa-regular fa-star";
+
    return (
-      
-         <div className={style.card}>
-               {
-                  isFavorite ? (
-                     <button onClick={handleFavorite} className={style.button}><i className="fa-solid fa-star" style={{color: '#ffbf00'}}></i></button>
-                  ) : (
-                     <button onClick={handleFavorite} className={style.button}><i className="fa-regular fa-star" style={{color: '#ffbf00'}}></i></button>
-                  )
-               }
-               {/* <button className={style.button}>X</button> */}
-               <img  src={props.image} alt="" className={style.imgCard}/>
-               <Link to={`/detail/${props.id}`} style={{textDecoration: 'none'}}>
-                  <span className={style.name}>{props.name}</span>
-               </Link>
-            <span className={style.data}>
-               <span>{props.species}</span>
-               <span>{props.gender}</span>
-            </span>
-         </div>
+      <div className={style.card}>
+         <button onClick={handleFavorite} className={style.button}>
+            <i className={favIcon} style={{color: '#ffbf00'}}></i>
+         </button>
+         <img  src={props.image} alt="" className={style.imgCard}/>
+         <Link to={`/detail/${props.id}`} style={{textDecoration: 'none'}}>
+            <span className={style.name}>{props.name}</span>
+         </Link>
+         <span className={style.data}>
+            <span>{props.species}</span>
+            <span>{props.gender}</span>
+         </span>
+      </div>
    );
 }

@@ -1,7 +1,7 @@
 .rowOne{
     grid-column: 1/4;
     grid-row: 2/3;
-
+    margin: 0 2%;
 }
 .spanInfo{
     font-size: 23px;
@@ -18,7 +18,40 @@
     display: grid;
     gap: 2rem;
     grid-auto-rows: 22rem;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     margin: 0 2%;
 
+}
+.button {
+    background-color: #308c13;
+    color: #fff;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.1rem;
+    transition: all 0.6s ease-in;
+    border: 2px outset;
+    margin-left: 4%;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #096c77;
+}
+
+.pagesButtons{
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 2px;
+    float: right;
+}
+.pagesButtons:hover{
+    border-radius: 23%;
+    padding: 2px;
+    font-size: 2.1rem;
 }

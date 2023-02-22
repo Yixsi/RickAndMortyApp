@@ -7,10 +7,10 @@ import {
   GET_FAVORITES
 } from "../actions/types";
 
-export const getCharacters = () =>{
+export const getCharacters = (id) =>{
     return async (dispatch) =>{
         const response = await axios.get(
-          "https://rickandmortyapi.com/api/character/"
+          `https://rickandmortyapi.com/api/character/?page=${id}`
         );
         return dispatch({
             type: GET_CHARACTERS,
