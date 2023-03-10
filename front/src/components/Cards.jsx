@@ -31,11 +31,17 @@ export default function Cards({onClose, onSearch}) {
    return(
          <>
             <div className={style.rowOne}>
-               <span className={style.spanInfo}>Write a number and add a character!</span>
+               <span className={style.spanInfo}>Add your favorite characters!</span>
                {/* <SearchBar className="search" onSearch={onSearch}/> */}
-               <Link to='/favorites'><button className={style.button}>See favorites</button></Link>
-               <button onClick={() => handleUrl('next')} className={style.pagesButtons}><i className="fa-solid fa-circle-arrow-right"></i></button>
-               <button onClick={() =>handleUrl('prev')} className={style.pagesButtons}><i className="fa-solid fa-circle-arrow-left"></i></button>
+               <div className={style.buttonGroup}>
+                  <Link to='/favorites'><button className={style.buttons}>See favorites</button></Link>
+                  <button className={style.buttons}>Order</button>
+                  <button className={style.buttons}>Filter</button>
+               </div>
+               <div>
+                  <button onClick={() => handleUrl('next')} className={style.pagesButtons}><i className="fa-solid fa-circle-arrow-right"></i></button>
+                  <button onClick={() =>handleUrl('prev')} className={style.pagesButtons}><i className="fa-solid fa-circle-arrow-left"></i></button>
+               </div>
                
             </div>
             <div className={style.cards}>

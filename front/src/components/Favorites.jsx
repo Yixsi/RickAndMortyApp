@@ -7,7 +7,7 @@ export default function Favorites(){
     const { favorites } = useSelector(state => state)
     return(
         <div className={style.favorites}>
-               {
+               {  (favorites.length > 0)?
                   favorites.map((el, key) => {
                      return(
                         <Card id={el.id}
@@ -18,6 +18,7 @@ export default function Favorites(){
                         />
                         )
                      })
+                     : <p className={style.noFavs}>Oops! no favorites yet. Add your favorites characters!</p>
                   }
             </div>
     )

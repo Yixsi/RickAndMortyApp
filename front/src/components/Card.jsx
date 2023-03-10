@@ -7,16 +7,27 @@ import { addFavorite, deleteFavorite } from '../redux/actions';
 export default function Card(props) {
 
    const favorites = useSelector(state => state.favorites);
+   const cards = useSelector(state => state.characters);
    const [ isFavorite, setFavorite ] = useState(false);  
    const dispatch = useDispatch();
 
-   useEffect(() => {
-      for(let f of favorites){
-         if (f.id === props.id) {
-            setFavorite(true);
+   const checkFavs = ()=>{
+      let bool = false;
+      if(favorites){
+         for(let f of favorites){
+            if (f.id === props.id) {
+               bool = true;
+            }
          }
       }
-   }, [favorites]
+      setFavorite(bool)
+   }
+   useEffect(() => {
+      checkFavs();
+      return () =>{
+         checkFavs();
+      }
+   }, [favorites, cards]
    );
 
    const handleFavorite = ()=>{

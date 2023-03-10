@@ -4,7 +4,9 @@ import {
   GET_CHARACTER_DETAIL,
   ADD_FAVORITE,
   DELETE_FAVORITE,
-  GET_FAVORITES
+  GET_FAVORITES,
+  FILTER,
+  ORDER
 } from "../actions/types";
 
 export const getCharacters = (id) =>{
@@ -50,3 +52,19 @@ export const getFavorites = ()=>{
     type: GET_FAVORITES
   }
 }
+
+export const filterCards = (status) =>{
+  return{
+    type: FILTER,
+    payload: status
+  }
+}
+
+export const orderCards = (id)=>{
+  return{
+    type: ORDER,
+    payload: id
+    
+  }
+}
+

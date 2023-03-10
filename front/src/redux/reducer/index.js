@@ -9,7 +9,8 @@ import {
 const initialState = {
   characters: [],
   characterDetail: {},
-  favorites: []
+  favorites: [],
+  allCharacters: []
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
